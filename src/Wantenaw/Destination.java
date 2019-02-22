@@ -2,8 +2,9 @@
 package Wantenaw;
 
 /**
- *
- * @author wille
+ * @author Willem Wantenaar
+ * 2/20/2019
+ * Assignment 3
  */
 public enum Destination {
     AB ("Alberta", 21.95),
