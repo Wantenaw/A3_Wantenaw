@@ -7,7 +7,6 @@ package Wantenaw;
  * Assignment 3
  */
 import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,28 +18,28 @@ public class Main {
         String yes = "y";
         String no = "n";
         String i;
+        String pc;
         
         // loop for inputting shipments
-        while (i != no){
-            if (i == yes){
+        while (i.equals(no)){
+            if (i.equals(yes)){
                 Destination tempDest;
                 Shipment tempShipment;
                 
-                while (pc != ){
+                while (Destination.contains(pc)){
                     System.out.println("Enter Destination Provice Code: ");
-                    String pc = input.nextLine();
-                    if (pc == Destination.pc.getName()){
-                    
+                    pc = input.nextLine();
+                    if (pc != Destination){
+                        System.out.println("Ivalid Provice Code (ex.'ON')");
                     }
                 }
                 System.out.println("Enter Total Value of Shipment: ");
                 double value = input.nextDouble();
-                tempShipment(setShipValue(value));
                 
                 System.out.println("Add Another (y/n) ? ");
                 i = input.nextLine();
                 
-                Shipment finalShipment = new Shipment(tempDest, 0);
+                Shipment finalShipment = new Shipment(tempDest, value);
                 shipmentList.add(finalShipment);
             }
             else {
@@ -48,7 +47,13 @@ public class Main {
                 i = input.nextLine();            
             }
         }
-        System.out.println(shipmentList);
+        // gets total cost
+        while (int x != shipmentList){
+            for (x = 0 ; x != shipmentList.length ; x++){
+                double total += getCost() + getShipValue(shipmentList[x]);
+            }
+        }
+        System.out.println(shipmentList + " $ " + total);
     }
     
 }

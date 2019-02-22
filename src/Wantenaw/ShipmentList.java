@@ -18,7 +18,6 @@ public class ShipmentList {
     }
     public void add(Shipment shipment){
         if (shipmentList.contains(shipment)){
-            
         }
         else {
             this.shipmentList.add(shipment);
